@@ -1,0 +1,15 @@
+{description, "VerneMQ Plugin"}.
+{variables, [
+    {name, "my_plugin", "Name for the VerneMQ Plugin"},
+    {desc, "A VerneMQ plugin", "Short description if the VerneMQ plugin"}
+]}.
+
+{template, "vernemq_plugin/otp_app.app.src", "{{name}}/src/{{name}}.app.src"}.
+{template, "vernemq_plugin/app.schema", "{{name}}/priv/{{name}}.schema"}.
+{template, "vernemq_plugin/app.erl", "{{name}}/src/{{name}}_app.erl"}.
+{template, "vernemq_plugin/sup.erl", "{{name}}/src/{{name}}_sup.erl"}.
+{template, "vernemq_plugin/plugin.erl", "{{name}}/src/{{name}}.erl"}.
+{template, "vernemq_plugin/otp_app.app.src", "{{name}}/src/{{name}}.app.src"}.
+{template, "vernemq_plugin/rebar.config", "{{name}}/rebar.config"}.
+{template, "vernemq_plugin/gitignore", "{{name}}/.gitignore"}.
+{template, "vernemq_plugin/README.md", "{{name}}/README.md"}.
