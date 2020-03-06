@@ -1,7 +1,10 @@
-{description, "VerneMQ Plugin"}.
+{description, "Generates a VerneMQ Plugin"}.
 {variables, [
     {name, "my_plugin", "Name for the VerneMQ Plugin"},
-    {desc, "A VerneMQ plugin", "Short description if the VerneMQ plugin"}
+    {desc, "A VerneMQ plugin", "Short description if the VerneMQ plugin"},
+    {license, "Apache 2.0", "License to use for this Plugin"},
+    {no_mqtt_three, false, "Do not make the plugin support MQTT 3.1 hooks"},
+    {no_mqtt_five, false, "Do not make the plugin support MQTT 5 hooks"}
 ]}.
 
 {template, "vernemq_plugin/otp_app.app.src", "{{name}}/src/{{name}}.app.src"}.
@@ -9,7 +12,6 @@
 {template, "vernemq_plugin/app.erl", "{{name}}/src/{{name}}_app.erl"}.
 {template, "vernemq_plugin/sup.erl", "{{name}}/src/{{name}}_sup.erl"}.
 {template, "vernemq_plugin/plugin.erl", "{{name}}/src/{{name}}.erl"}.
-{template, "vernemq_plugin/otp_app.app.src", "{{name}}/src/{{name}}.app.src"}.
 {template, "vernemq_plugin/rebar.config", "{{name}}/rebar.config"}.
 {template, "vernemq_plugin/gitignore", "{{name}}/.gitignore"}.
 {template, "vernemq_plugin/README.md", "{{name}}/README.md"}.
