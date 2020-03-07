@@ -28,8 +28,8 @@ vernemq_plugin:
         custom template (~/.config/rebar3/templates/rebar3_template_vernemq/vernemq_plugin.template)
         Description: Generates a VerneMQ Plugin
         Variables:
-                name="my_plugin" (Name for the VerneMQ Plugin)
-                desc="A VerneMQ plugin" (Short description if the VerneMQ plugin)
+                name="my_plugin" (Name of the VerneMQ Plugin)
+                desc="A VerneMQ plugin" (Short description of the VerneMQ plugin)
                 license="Apache 2.0" (License to use for this Plugin)
                 no_mqtt_three=false (Do not make the plugin support MQTT 3.1 hooks)
                 no_mqtt_five=false (Do not make the plugin support MQTT 5 hooks)
