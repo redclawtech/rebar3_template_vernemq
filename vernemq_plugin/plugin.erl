@@ -117,7 +117,31 @@ on_register_m5({_IpAddr, _Port} = Peer, {_MountPoint, _ClientId} = SubscriberId,
     ok.
 
 auth_on_publish_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, QoS, Topic, Payload, IsRetain, Props) ->
-    error_logger:info_msg("auth_on_register_m5: ~p ~p ~p ~p ~p ~p ~p", [UserName, SubscriberId, QoS, Topic, Payload, IsRetain, Props]),
+    error_logger:info_msg("auth_on_publish_m5: ~p ~p ~p ~p ~p ~p ~p", [UserName, SubscriberId, QoS, Topic, Payload, IsRetain, Props]),
+    ok.
+
+on_publish_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, QoS, Topic, Payload, IsRetain, Props) ->
+    error_logger:info_msg("on_publish_m5: ~p ~p ~p ~p ~p ~p ~p", [UserName, SubscriberId, QoS, Topic, Payload, IsRetain, Props]),
+    ok.
+
+on_deliver_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, Topic, Payload, Props) ->
+    error_logger:info_msg("on_deliver_m5: ~p ~p ~p ~p ~p", [UserName, SubscriberId, Topic, Payload, Props]),
+    ok.
+
+auth_on_subscribe_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, [{_Topic, _QoS}|_] = Topics, Props) ->
+    error_logger:info_msg("auth_on_subscribe_m5: ~p ~p ~p ~p", [UserName, SubscriberId, Topics, Props]),
+    ok.
+
+on_subscribe_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, [{_Topic, _QoS}|_] = Topics, Props) ->
+    error_logger:info_msg("on_subscribe_m5: ~p ~p ~p ~p", [UserName, SubscriberId, Topics, Props]),
+    ok.
+
+on_unsubscribe_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, [{_Topic, _QoS}|_] = Topics, Props) ->
+    error_logger:info_msg("on_unsubscribe_m5: ~p ~p ~p ~p", [UserName, SubscriberId, Topics, Props]),
+    ok.
+
+on_auth_m5(Username, {_MountPoint, _ClientId} = SubscriberId, Props) ->
+    error_logger:info_msg("on_auth_m5: ~p ~p ~p", [UserName, SubscriberId, Props]),
     ok.
 
 {{/no_mqtt_five}}
