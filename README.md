@@ -43,7 +43,7 @@ vernemq_plugin:
 
 ## License
 
-Copyright (c) 2020 (RedClaw Technologies)[ http://www.redclawtech.com]
+Copyright (c) 2020 [RedClaw Technologies](http://www.redclawtech.com)
 
 This work is free. You can redistribute it and/or modify it under the
 terms of the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for more details.
