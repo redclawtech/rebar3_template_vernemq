@@ -4,7 +4,7 @@ This repo provides a [rebar3](http://rebar3.org) template for easier creation of
 
 ## Setup
 
-To install simply clone to `~/.config/rebar3/templates`:
+To install, simply clone to `~/.config/rebar3/templates`:
 
 ```
 mkdir -p ~/.config/rebar3/templates
