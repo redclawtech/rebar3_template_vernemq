@@ -105,8 +105,19 @@ on_client_offline({_MountPoint, _ClientId} = SubscriberId) ->
 on_client_gone({_MountPoint, _ClientId} = SubscriberId) ->
     error_logger:info_msg("on_client_gone: ~p", [SubscriberId]),
     ok.
-{{/no_mqtt_three}}
 
+{{/no_mqtt_three}}
 {{^no_mqtt_five}}
-ok.
+auth_on_register_m5({_IpAddr, _Port} = Peer, {_MountPoint, _ClientId} = SubscriberId, UserName, Password, CleanStart, Props) ->
+    error_logger:info_msg("auth_on_register_m5: ~p ~p ~p ~p ~p ~p", [Peer, SubscriberId, UserName, Password, CleanStart, Props]),
+    ok.
+
+on_register_m5({_IpAddr, _Port} = Peer, {_MountPoint, _ClientId} = SubscriberId, UserName, Props) ->
+    error_logger:info_msg("on_register_m5: ~p ~p ~p ~p", [Peer, SubscriberId, UserName, Props]),
+    ok.
+
+auth_on_publish_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, QoS, Topic, Payload, IsRetain, Props) ->
+    error_logger:info_msg("auth_on_register_m5: ~p ~p ~p ~p ~p ~p ~p", [UserName, SubscriberId, QoS, Topic, Payload, IsRetain, Props]),
+    ok.
+
 {{/no_mqtt_five}}
