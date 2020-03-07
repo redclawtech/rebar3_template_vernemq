@@ -1,0 +1,14 @@
+{mapping, "{{name}}.registry_mfa", "{{name}}.registry_mfa",
+  [
+    {default, "{vmq_reg,direct_plugin_exports,[{{name}}]}"},
+    {datatype, string},
+    hidden
+  ]}.
+
+{translation, "{{name}}.registry_mfa",
+  fun(Conf) ->
+    S = cuttlefish:conf_get("{{name}}.registry_mfa", Conf),
+    {ok, T, _} = erl_scan:string(S ++ "."),
+    {ok, Term} = erl_parse:parse_term(T),
+    Term
+  end}.
