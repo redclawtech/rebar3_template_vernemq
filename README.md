@@ -36,7 +36,7 @@ vernemq_plugin:
                 date="2020-03-07"
                 datetime="2020-03-07T02:05:05+00:00"
                 author_name="Dairon Medina Caro"
-                author_email="dairon@gooee.com"
+                author_email="me@dairon.org"
                 copyright_year="2020"
                 apps_dir="apps" (Directory where applications will be created if needed)
 ```
