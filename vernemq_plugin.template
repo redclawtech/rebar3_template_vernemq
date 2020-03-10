@@ -1,11 +1,11 @@
 {description, "Generates a VerneMQ Plugin"}.
 {variables, [
-    {name, "my_plugin", "Name of the VerneMQ Plugin"},
-    {desc, "A VerneMQ plugin", "Short description of the VerneMQ plugin"},
-    {license, "Apache 2.0", "License to use for this Plugin"},
-    {no_mqtt_three, false, "Do not make the plugin support MQTT 3.1 hooks"},
-    {no_mqtt_five, false, "Do not make the plugin support MQTT 5 hooks"}
-]}.
+	     {name, "my_plugin", "Name of the VerneMQ Plugin"},
+	     {desc, "A VerneMQ plugin", "Short description of the VerneMQ plugin"},
+	     {license, "Apache 2.0", "License to use for this Plugin"},
+	     {no_mqtt_three, false, "Do not make the plugin support MQTT 3.1 hooks"},
+	     {no_mqtt_five, false, "Do not make the plugin support MQTT 5 hooks"}
+	    ]}.
 
 {template, "vernemq_plugin/otp_app.app.src", "{{name}}/src/{{name}}.app.src"}.
 {template, "vernemq_plugin/app.schema", "{{name}}/priv/{{name}}.schema"}.
