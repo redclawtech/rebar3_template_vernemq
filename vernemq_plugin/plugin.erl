@@ -34,7 +34,7 @@
          on_publish/6,
          on_subscribe/3,
          on_unsubscribe/3,
-         on_deliver/4,
+         on_deliver/6,
          on_offline_message/5,
          on_client_wakeup/1,
          on_client_offline/1,
@@ -46,7 +46,7 @@
          on_register_m5/4,
          auth_on_publish_m5/7,
          on_publish_m5/7,
-         on_deliver_m5/5,
+         on_deliver_m5/7,
          auth_on_subscribe_m5/4,
          on_subscribe_m5/4,
          on_unsubscribe_m5/4,
@@ -86,8 +86,8 @@ on_unsubscribe(UserName, {_MountPoint, _ClientId} = SubscriberId, [{_Topic, _QoS
     error_logger:info_msg("on_unsubscribe: ~p ~p ~p", [UserName, SubscriberId, Topics]),
     ok.
 
-on_deliver(UserName, {_MountPoint, _ClientId} = SubscriberId, Topic, Payload) ->
-    error_logger:info_msg("on_deliver: ~p ~p ~p ~p", [UserName, SubscriberId, Topic, Payload]),
+on_deliver(UserName, {_MountPoint, _ClientId} = SubscriberId, QoS, Topic, Payload, IsRetain) ->
+    error_logger:info_msg("on_deliver: ~p ~p ~p ~p ~p ~p", [UserName, SubscriberId, QoS, Topic, Payload, IsRetain]),
     ok.
 
 on_offline_message({_MountPoint, _ClientId} = SubscriberId, QoS, Topic, Payload, IsRetain) ->
@@ -124,8 +124,8 @@ on_publish_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, QoS, Topic, Pay
     error_logger:info_msg("on_publish_m5: ~p ~p ~p ~p ~p ~p ~p", [UserName, SubscriberId, QoS, Topic, Payload, IsRetain, Props]),
     ok.
 
-on_deliver_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, Topic, Payload, Props) ->
-    error_logger:info_msg("on_deliver_m5: ~p ~p ~p ~p ~p", [UserName, SubscriberId, Topic, Payload, Props]),
+on_deliver_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, QoS, Topic, Payload, IsRetain, Props) ->
+    error_logger:info_msg("on_deliver_m5: ~p ~p ~p ~p ~p ~p ~p", [UserName, SubscriberId, QoS, Topic, Payload, IsRetain, Props]),
     ok.
 
 auth_on_subscribe_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, [{_Topic, _QoS}|_] = Topics, Props) ->
@@ -140,7 +140,7 @@ on_unsubscribe_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, [{_Topic, _
     error_logger:info_msg("on_unsubscribe_m5: ~p ~p ~p ~p", [UserName, SubscriberId, Topics, Props]),
     ok.
 
-on_auth_m5(Username, {_MountPoint, _ClientId} = SubscriberId, Props) ->
+on_auth_m5(UserName, {_MountPoint, _ClientId} = SubscriberId, Props) ->
     error_logger:info_msg("on_auth_m5: ~p ~p ~p", [UserName, SubscriberId, Props]),
     ok.
 
